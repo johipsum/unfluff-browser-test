@@ -11,16 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const textDisplay = document.getElementById('text-display')
 
 
-  fetchBtn.addEventListener('click', () => {
-    fetch(urlInput.value)
-      .then(res => res.text())
-      .then(html => unfluff(html))
-      .then(({ title, description, canonicalLink, text }) => {
-        titleDisplay.innerHTML = title
-        descDisplay.innerHTML = description
-        linkDisplay.innerHTML = canonicalLink
-        linkDisplay.href = canonicalLink
-        textDisplay.innerHTML = text
-      })
+  fetchBtn.addEventListener('click', async () => {
+    const html = await fetch(urlInput.value).then(res => res.text())
+    const { title, description, canonicalLink, text } = unfluff(html)
+
+    titleDisplay.innerHTML = title
+    descDisplay.innerHTML = description
+    linkDisplay.innerHTML = canonicalLink
+    linkDisplay.href = canonicalLink
+    textDisplay.innerHTML = text
   })
 })
