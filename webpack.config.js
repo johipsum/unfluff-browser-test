@@ -1,11 +1,26 @@
+const webpack = require('webpack')
+
 module.exports = {
-  entry: './index.js',
+  entry: './app.js',
   output: {
     filename: 'bundle.js'
   },
   module: {
     loaders: [
-      { test: /\.json/, loader: "json" },
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
+      { test: /\.json/, loader: 'json' }
     ]
-  }
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    })
+  ]
 }
