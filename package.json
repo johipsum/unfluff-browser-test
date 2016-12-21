@@ -1,0 +1,20 @@
+{
+  "name": "unfluff-browser-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/webpack app.js"
+  },
+  "author": "johipsum <johannes@hauptsache-serioes.de>",
+  "license": "ISC",
+  "dependencies": {
+    "fetch-everywhere": "^1.0.5",
+    "unfluff": "https://github.com/johipsum/node-unfluff/tarball/frontend-support"
+  },
+  "devDependencies": {
+    "json-loader": "^0.5.4",
+    "webpack": "^1.14.0"
+  }
+}
