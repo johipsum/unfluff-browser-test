@@ -4,8 +4,9 @@
 
 _____
 
-Bundle javascript with [webpack](https://webpack.js.org)
+Bundle javascript with [webpack](https://webpack.js.org) and/or [browserify](http://browserify.org/)
 
 ```shell
-$ npm run build
+$ npm run webpack # bundle with webpack -> bundle.js
+$ npm run browserify # bundle with browserify -> browserify-bundle.js
 ```

@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/.bin/webpack app.js"
+    "webpack": "./node_modules/.bin/webpack app.js",
+    "browserify": "browserify app.js -t babelify -o browserify-bundle.js"
   },
   "author": "johipsum <johannes@hauptsache-serioes.de>",
   "license": "ISC",
@@ -18,6 +19,7 @@
     "babel-loader": "^6.2.10",
     "babel-polyfill": "^6.20.0",
     "babel-preset-env": "^1.1.4",
+    "babelify": "^7.3.0",
     "json-loader": "^0.5.4",
     "webpack": "^1.14.0"
   }
